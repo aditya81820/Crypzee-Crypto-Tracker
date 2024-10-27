@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1009139110131",
+    "project_id": "crypzee-crypto-tracking-app",
+    "storage_bucket": "crypzee-crypto-tracking-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009139110131:android:6da9f6e7de6dea007be786",
+        "android_client_info": {
+          "package_name": "com.adityat.crypzee_cryptotrackingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9KGlnjMGV3Oz5i7GlMmn1nVP4qnBwlQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
