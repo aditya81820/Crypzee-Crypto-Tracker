@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -42,7 +43,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 @Composable
-fun Explore(viewModel: MainViewModel) {
+fun Explore(viewModel: MainViewModel, padd: PaddingValues) {
     // Observe the news articles
     val articles by viewModel.newsArticles
     val isLoading by viewModel.isLoadingnews
@@ -50,7 +51,7 @@ fun Explore(viewModel: MainViewModel) {
         viewModel.fetchNews("1a5181a3ee0248a883ed40aef109cfb7")
 
     }
-    Column() {
+    Column(modifier = Modifier.padding(padd)) {
         // Show loading indicator if data is loading
         if (isLoading) {
             Box(

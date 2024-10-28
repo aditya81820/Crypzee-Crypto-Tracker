@@ -24,26 +24,9 @@ import retrofit2.HttpException
 
 class MainViewModel : ViewModel() {
 
-
-    // To track login status
-    private val _isLoggedIn: MutableState<Boolean> = mutableStateOf(false)
-    val isLoggedIn: State<Boolean> get() = _isLoggedIn
-
-
     // For Bottom Navigation
     private val _currentScreen: MutableState<Screen> = mutableStateOf(Screen.BottomScreens.Home)
     val currentScreen: MutableState<Screen> get() = _currentScreen
-    fun setCurrentScreen(screen: Screen) {
-        _currentScreen.value = screen
-    }
-
-    // For Top Screen Navigation
-    private val _currenttopScreen: MutableState<Screen> =
-        mutableStateOf(Screen.BottomScreens.topScreens.MarketCap)
-    val currenttopScreen: MutableState<Screen> get() = _currenttopScreen
-    fun setCurrenttopScreen(screen: Screen) {
-        _currenttopScreen.value = screen
-    }
 
     // API and Data Handling for coin
     val coinList: MutableState<List<CoinData>> = mutableStateOf(emptyList())
@@ -136,6 +119,7 @@ class MainViewModel : ViewModel() {
     val isLoadinggraph: State<Boolean> get() = _isLoadinggraph
 
     fun fetchCoinMarketChart(coinId: String, days: Int) {
+        clearCoinPriceData()
         viewModelScope.launch {
             _isLoadinggraph.value = true
             try {
@@ -176,9 +160,14 @@ class MainViewModel : ViewModel() {
     val isLoadingwishcoins: State<Boolean> get() = _isLoadingwishcoins
 
     // Fetch wishlist coin IDs from Firebase and retrieve details from CoinGecko API
+    fun clearWishList() {
+        _wishlistCoins.value = emptyList() // Resetting the data
+    }
 
 
     fun fetchWishlistCoins() {
+
+
         val userId = auth.currentUser?.uid ?: return
         firestore.collection("users").document(userId).collection("wishlist")
             .get()

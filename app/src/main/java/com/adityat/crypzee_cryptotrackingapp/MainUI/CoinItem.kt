@@ -49,6 +49,7 @@ fun CoinItem(coin: CoinData, navControllerOld: NavHostController, viewModel: Mai
                 val jsonCoin = Uri.encode(Gson().toJson(coin))
                 navControllerOld.navigate("${Screen.entityScreen.CoinDescription.route}/${jsonCoin}")
 
+
             },
         shape = RoundedCornerShape(10.dp)
     ) {

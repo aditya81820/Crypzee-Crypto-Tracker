@@ -30,8 +30,9 @@ import com.adityat.crypzee_cryptotrackingapp.Viewmodel.MainViewModel
 fun WishList(viewModel: MainViewModel, padd: PaddingValues, navControllerOld: NavHostController) {
     val coinList by viewModel.wishlistCoins.collectAsState()
     val isLoading by viewModel.isLoadingwishcoins
-    LaunchedEffect(1 ){
+    LaunchedEffect(coinList) {
         viewModel.fetchWishlistCoins()
+
     }
 
     Column(modifier = Modifier.padding(padd)) {

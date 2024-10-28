@@ -181,10 +181,10 @@ fun Dashboard(
                 MarketCap(navControllerOld, padd, viewModel)
             }
             composable(Screen.BottomScreens.Explore.route) {
-                Explore(viewModel)
+                Explore(viewModel, padd)
             }
             composable(Screen.BottomScreens.Settings.route) {
-                Settings(auth,viewModel)
+                Settings(auth,viewModel , navControllerOld,padd)
             }
             composable(Screen.BottomScreens.topScreens.MarketCap.troute) {
                 MarketCap(navControllerOld, padd, viewModel)

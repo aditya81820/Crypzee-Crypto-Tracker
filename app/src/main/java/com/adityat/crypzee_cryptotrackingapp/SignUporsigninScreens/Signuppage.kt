@@ -96,13 +96,13 @@ fun Signuppage(navController: NavHostController, auth: FirebaseAuth) {
             Text(text = "Name", modifier = Modifier.padding(top = 16.dp, start = 8.dp))
             OutlinedTextField(
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedTextColor = Color.White,
+                    unfocusedTextColor = MaterialTheme.colorScheme.secondary,
                     unfocusedBorderColor = Color.DarkGray,
                     unfocusedLabelColor = Color.DarkGray,
-                    focusedTextColor = Color.White,
+                    focusedTextColor = MaterialTheme.colorScheme.secondary,
                     focusedBorderColor = Color.DarkGray,
                     focusedLabelColor = Color.DarkGray,
-                    cursorColor = Color.White
+                    cursorColor = MaterialTheme.colorScheme.secondary
                 ),
                 value = name, onValueChange = { name = it },
                 modifier = Modifier
@@ -117,13 +117,13 @@ fun Signuppage(navController: NavHostController, auth: FirebaseAuth) {
             Text(text = "E-mail", modifier = Modifier.padding(top = 16.dp, start = 8.dp))
             OutlinedTextField(
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedTextColor = Color.White,
+                    unfocusedTextColor = MaterialTheme.colorScheme.secondary,
                     unfocusedBorderColor = Color.DarkGray,
                     unfocusedLabelColor = Color.DarkGray,
-                    focusedTextColor = Color.White,
+                    focusedTextColor = MaterialTheme.colorScheme.secondary,
                     focusedBorderColor = Color.DarkGray,
                     focusedLabelColor = Color.DarkGray,
-                    cursorColor = Color.White
+                    cursorColor = MaterialTheme.colorScheme.secondary
                 ),
                 value = email, onValueChange = { email = it }, modifier = Modifier
                     .fillMaxWidth()
@@ -138,13 +138,13 @@ fun Signuppage(navController: NavHostController, auth: FirebaseAuth) {
 
             OutlinedTextField(
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedTextColor = Color.White,
+                    unfocusedTextColor = MaterialTheme.colorScheme.secondary,
                     unfocusedBorderColor = Color.DarkGray,
                     unfocusedLabelColor = Color.DarkGray,
-                    focusedTextColor = Color.White,
+                    focusedTextColor = MaterialTheme.colorScheme.secondary,
                     focusedBorderColor = Color.DarkGray,
                     focusedLabelColor = Color.DarkGray,
-                    cursorColor = Color.White
+                    cursorColor = MaterialTheme.colorScheme.secondary
                 ),
                 value = password,
                 onValueChange = { password = it },

@@ -90,13 +90,13 @@ fun SignInPage(navController: NavHostController, auth: FirebaseAuth) {
                     .padding(8.dp),
                 placeholder = { Text(text = "Enter the Email Here!") },
                 colors = OutlinedTextFieldDefaults.colors(
-                    unfocusedTextColor = Color.White,
+                    unfocusedTextColor = MaterialTheme.colorScheme.secondary,
                     unfocusedBorderColor = Color.DarkGray,
                     unfocusedLabelColor = Color.DarkGray,
-                    focusedTextColor = Color.White,
+                    focusedTextColor = MaterialTheme.colorScheme.secondary,
                     focusedBorderColor = Color.DarkGray,
                     focusedLabelColor = Color.DarkGray,
-                    cursorColor = Color.White
+                    cursorColor = MaterialTheme.colorScheme.secondary
                 ),
                 shape = RoundedCornerShape(12.dp),
                 isError = emailError
@@ -120,6 +120,15 @@ fun SignInPage(navController: NavHostController, auth: FirebaseAuth) {
             OutlinedTextField(
                 value = password,
                 onValueChange = { password = it; passwordError = false },
+                colors = OutlinedTextFieldDefaults.colors(
+                    unfocusedTextColor = MaterialTheme.colorScheme.secondary,
+                    unfocusedBorderColor = Color.DarkGray,
+                    unfocusedLabelColor = Color.DarkGray,
+                    focusedTextColor = MaterialTheme.colorScheme.secondary,
+                    focusedBorderColor = Color.DarkGray,
+                    focusedLabelColor = Color.DarkGray,
+                    cursorColor = MaterialTheme.colorScheme.secondary
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp),

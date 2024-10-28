@@ -91,6 +91,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-firestore-ktx:25.1.1" )// Check for the latest version
+    implementation ("com.google.android.gms:play-services-auth:21.2.0")
 
 
 

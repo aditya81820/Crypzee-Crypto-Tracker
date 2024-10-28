@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package com.adityat.crypzee_cryptotrackingapp.MainUI
 
 
@@ -18,7 +20,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
@@ -33,6 +35,8 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -73,6 +77,9 @@ fun CoinDescription(
 ) {
     val context = LocalContext.current
     // Function to add coin to wishlist
+    val removebutton = remember {
+        mutableStateOf(false)
+    }
     fun addToWishlist(coinId: String) {
         val userId = auth.currentUser?.uid ?: return // Get current user ID
         val wishlistRef = db.collection("users").document(userId).collection("wishlist")
@@ -83,11 +90,37 @@ fun CoinDescription(
                 // Optionally show a success message or update UI
                 Toast.makeText(context, "added Successfully", Toast.LENGTH_SHORT).show()
             }
-            .addOnFailureListener { e ->
+            .addOnFailureListener {
                 // Optionally handle errors
                 Toast.makeText(context, "failed to add", Toast.LENGTH_SHORT).show()
 
             }
+    }
+    fun removeFromWishlist(coinId: String) {
+        val userId = auth.currentUser?.uid ?: return // Get current user ID
+        val wishlistRef = db.collection("users").document(userId).collection("wishlist")
+
+        // Remove the coin ID from the user's wishlist
+        wishlistRef.document(coinId).delete()
+            .addOnSuccessListener {
+                // Optionally show a success message or update UI
+                Toast.makeText(context, "Removed Successfully", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                // Optionally handle errors
+                Toast.makeText(context, "Failed to remove", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    fun searchinWishlist(coinId: String) {
+        val userId = auth.currentUser?.uid ?: return // Get current user ID
+        val wishlistRef = db.collection("users").document(userId).collection("wishlist")
+        // Check if the coin ID exists in the user's wishlist
+        wishlistRef.document(coinId).get()
+            .addOnSuccessListener { document ->
+                // Coin is in the wishlist
+                removebutton.value = document.exists()
+        }
     }
     val data = viewModel.coinPriceData
     val isLoading by viewModel.isLoadinggraph // Add an isLoading state in your viewModel
@@ -100,12 +133,15 @@ fun CoinDescription(
         coin?.id?.let {
             viewModel.fetchCoinMarketChart(coin.id, 1)
         }
+        coin?.id?.let {
+            searchinWishlist(coin.id)
+        }
     }
 
 
     coin?.let { coin ->
-        var valuesend = coin.price_change_percentage_24h < 0
-        var selectedPrice by remember { mutableStateOf(coin.current_price) }
+        val valuesend = coin.price_change_percentage_24h < 0
+        var selectedPrice by remember { mutableDoubleStateOf(coin.current_price) }
         val color = if (coin.price_change_percentage_24h < 0) {
             Color.Red
         } else {
@@ -126,7 +162,7 @@ fun CoinDescription(
             TopAppBar(
                 title = {
                     Icon(
-                        imageVector = Icons.Default.ArrowBack,
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "",
                         modifier = Modifier.clickable {
                             navController.popBackStack()
@@ -155,14 +191,31 @@ fun CoinDescription(
                     modifier = Modifier.size(50.dp),
                     contentScale = ContentScale.Crop
                 )
-                Text(
-                    text = "+ Add to Wishlist",
-                    color = Color(0xff4F75FF),
-                    fontWeight = FontWeight.W500,
-                    modifier = Modifier.clickable {
-                        addToWishlist(coin.id)
-                    }
-                )
+                if(removebutton.value){
+                    Text(
+                        text = "- Remove from Wishlist",
+                        color = Color(0xff4F75FF),
+                        fontWeight = FontWeight.W500,
+                        modifier = Modifier.clickable {
+                            removeFromWishlist(coin.id)
+                            removebutton.value=false
+                        }
+                    )
+
+                }
+                else{
+                    Text(
+                        text = "+ Add to Wishlist",
+                        color = Color(0xff4F75FF),
+                        fontWeight = FontWeight.W500,
+                        modifier = Modifier.clickable {
+                            addToWishlist(coin.id)
+                            removebutton.value =true
+                        }
+                    )
+
+                }
+
             }
             Row(
                 modifier = Modifier
@@ -194,14 +247,14 @@ fun CoinDescription(
                     modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
                 ) {
-                    CircularProgressIndicator(color = androidx.compose.ui.graphics.Color.White)
+                    CircularProgressIndicator(color = Color.White)
                 }
             } else {
                 CoinPriceChart(data = data.value, valuesend) { price ->
                     selectedPrice = price  // Update the selected price
                 }
             }
-            var selectedIndex by remember { mutableStateOf(0) }
+            var selectedIndex by remember { mutableIntStateOf(0) }
             val labels = listOf("24H", "1W", "1M", "1Y", "5Y")
 
             Row(
