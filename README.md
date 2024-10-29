@@ -5,7 +5,7 @@ Welcome to **Crypzee**—your go-to app for staying updated with real-time crypt
 ## 📱 Screenshots
 | Home Screen                             | Coin Details                          | News                         |
 |-----------------------------------------|---------------------------------------|------------------------------|
-| ![Home Screen](./screenshots/home.png)  | ![Coin Details](./screenshots/details.png) | ![News](./screenshots/news.png) |
+| ![Home Screen](./screenshots/home.jpg)  | ![Coin Details](./screenshots/details.jpg) | ![News](./screenshots/news.jpg) |
 
 *Add screenshots to the `./screenshots/` folder to display them above.*
 
