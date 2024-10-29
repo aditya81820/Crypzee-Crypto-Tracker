@@ -1,7 +1,11 @@
 package com.adityat.crypzee_cryptotrackingapp.SignUporsigninScreens
 
+import android.app.Activity.RESULT_OK
 import android.content.Context
+import android.util.Log
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -46,7 +50,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.adityat.crypzee_cryptotrackingapp.R
 import com.adityat.crypzee_cryptotrackingapp.Screen
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -57,6 +66,31 @@ fun Signuppage(navController: NavHostController, auth: FirebaseAuth) {
     var password by remember { mutableStateOf("") }
     var name by remember { mutableStateOf("") }
     val context = LocalContext.current
+    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        Log.d("SignInLauncher", "Result Code: ${result.resultCode}")
+
+        if (result.resultCode == RESULT_OK) {
+            val data = result.data
+            Log.d("SignInLauncher", "Data: $data")
+            try {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+                val account = task.getResult(ApiException::class.java)
+                if (account != null) {
+                    firebaseAuthWithGoogle(account, auth, navController, context)
+                } else {
+                    Toast.makeText(context, "Google sign-in failed", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: ApiException) {
+                Log.e("SignInLauncher", "Google sign-in failed: ${e.statusCode} - ${e.message}")
+                Toast.makeText(context, "Google sign-in failed: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(context, "Google sign-in cancelled", Toast.LENGTH_SHORT).show()
+            Log.d("SignInLauncher", "Sign-in cancelled")
+        }
+
+    }
+
     Box(
         modifier = Modifier.background(color = MaterialTheme.colorScheme.primary)
     ) {
@@ -192,7 +226,16 @@ fun Signuppage(navController: NavHostController, auth: FirebaseAuth) {
             }
             Spacer(modifier = Modifier.size(20.dp))
             Button(
-                onClick = { /*TODO*/ }, modifier = Modifier
+                onClick = { val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken("1009139110131-3mk9d276kpjta1eaesjolo8co5oh3rl5.apps.googleusercontent.com")
+                    .requestEmail()
+                    .build()
+
+                    val signInClient = GoogleSignIn.getClient(context, gso)
+                    val signInIntent = signInClient.signInIntent
+
+                    // Launch the sign-in intent
+                    launcher.launch(signInIntent) }, modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 35.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -295,6 +338,32 @@ private fun saveUserDataToFirestore(userId: String, name: String, email: String,
         }
         .addOnFailureListener { e ->
             Toast.makeText(context, "Failed to save user data: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+}
+private fun firebaseAuthWithGoogle(
+    account: GoogleSignInAccount,
+    auth: FirebaseAuth,
+    navController: NavHostController,
+    context: Context
+) {
+    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+    auth.signInWithCredential(credential)
+        .addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val user = auth.currentUser
+                val userId = user?.uid ?: ""
+                val name = user?.displayName ?: ""
+                val email = user?.email ?: ""
+                // Save user data to Firestore (optional)
+                saveUserDataToFirestore(userId, name, email, context)
+                Toast.makeText(context, "Sign-up successful with Google", Toast.LENGTH_SHORT).show()
+                navController.navigate(Screen.entityScreen.Dashboard.route) {
+                    popUpTo(Screen.entityScreen.SignUpHomeScreen.route) { inclusive = true }
+                    launchSingleTop = true
+                }
+            } else {
+                Toast.makeText(context, "Firebase authentication failed", Toast.LENGTH_SHORT).show()
+            }
         }
 }
 

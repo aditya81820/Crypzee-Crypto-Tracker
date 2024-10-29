@@ -56,6 +56,7 @@ class MainViewModel : ViewModel() {
         }
     }
 
+
     //Data handling for get top Gainers
     val gainercoinlist: MutableState<List<CoinData>> = mutableStateOf(emptyList())
     val isLoadinggainer = mutableStateOf(true)
@@ -160,14 +161,8 @@ class MainViewModel : ViewModel() {
     val isLoadingwishcoins: State<Boolean> get() = _isLoadingwishcoins
 
     // Fetch wishlist coin IDs from Firebase and retrieve details from CoinGecko API
-    fun clearWishList() {
-        _wishlistCoins.value = emptyList() // Resetting the data
-    }
-
 
     fun fetchWishlistCoins() {
-
-
         val userId = auth.currentUser?.uid ?: return
         firestore.collection("users").document(userId).collection("wishlist")
             .get()

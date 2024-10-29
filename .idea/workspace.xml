@@ -16,8 +16,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11504a18-f933-43de-a633-432c231861f6" name="Changes" comment="build the setting and the news of crypto">
+    <list default="true" id="11504a18-f933-43de-a633-432c231861f6" name="Changes" comment="completes in all the section just need to add fewer things in the project.">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/signinimage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
@@ -29,18 +31,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/ApiServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/ApiServices.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/CoinDescription.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/CoinDescription.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/CoinItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/CoinItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Dashboard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Dashboard.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Explore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Explore.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Settings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Settings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Wishlist.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/MainUI/Wishlist.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/SignUporsigninScreens/Signinpage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/SignUporsigninScreens/Signinpage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/SignUporsigninScreens/Signuppage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/SignUporsigninScreens/Signuppage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/Viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/Viewmodel/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/adityat/crypzee_cryptotrackingapp/ui/theme/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/signinimage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +59,38 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Crypzee -Crypto Tracking App" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Crypzee -Crypto Tracking App" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Crypzee -Crypto Tracking App" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Crypzee -Crypto Tracking App" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -108,28 +132,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CrypzeeCryptoTrackingApp&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/CrypzeeCryptoTrackingApp/app/src/main/res/drawable",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "build.tools"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
     ]
   }
-}</component>
+}]]></component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CrypzeeCryptoTrackingApp\app" />
       <recent name="D:\CrypzeeCryptoTrackingApp\app\src\main\res\drawable" />
+      <recent name="D:\CrypzeeCryptoTrackingApp\app" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.adityat.crypzee_cryptotrackingapp.Data" />
@@ -461,7 +494,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730052072903</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="completes in all the section just need to add fewer things in the project.">
+      <option name="closed" value="true" />
+      <created>1730107618147</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1730107618147</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -496,6 +537,7 @@
     <MESSAGE value="successfully ably to save the data in the firestore" />
     <MESSAGE value="successfully ably to fetch the data from firestore" />
     <MESSAGE value="build the setting and the news of crypto" />
-    <option name="LAST_COMMIT_MESSAGE" value="build the setting and the news of crypto" />
+    <MESSAGE value="completes in all the section just need to add fewer things in the project." />
+    <option name="LAST_COMMIT_MESSAGE" value="completes in all the section just need to add fewer things in the project." />
   </component>
 </project>
