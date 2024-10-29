@@ -1,40 +1,69 @@
-# Crypzee - Cryptocurrency Tracking App 📱💸
+# Crypzee - Cryptocurrency Tracking App 📈💰
 
-Crypzee is a sleek, user-friendly cryptocurrency tracking app that brings you real-time data, market trends, and curated news on the latest happenings in the crypto world.
+Welcome to **Crypzee**—your go-to app for staying updated with real-time cryptocurrency prices, trends, and news! This app is designed to provide fast, no-fluff data and headlines to help you make informed decisions in the crypto world.
 
-## 🚀 Features
+## 📱 Screenshots
+| Home Screen                             | Coin Details                          | News                         |
+|-----------------------------------------|---------------------------------------|------------------------------|
+| ![Home Screen](./screenshots/home.png)  | ![Coin Details](./screenshots/details.png) | ![News](./screenshots/news.png) |
 
-- **Real-Time Updates**: Stay ahead with live cryptocurrency prices.
-- **Curated News**: Get top crypto news with NewsAPI integration.
-- **Interactive Charts**: Visualize market trends with MPAndroidChart.
-- **Wishlist**: Save your favorite coins using Firebase Firestore.
+*Add screenshots to the `./screenshots/` folder to display them above.*
 
-## 🔧 Tech Stack
+## ✨ Features
 
+- **Real-Time Market Updates**: Track live prices using the CoinGecko API.
+- **Interactive Charts**: Visualize trends easily with MPAndroidChart.
+- **Latest Crypto News**: Get top headlines from NewsAPI.
+- **User-Friendly Interface**: Intuitive design for effortless tracking.
+- **Authentication**: Secure sign-in with Firebase Authentication.
+- **Wishlist**: Save your favorite coins with Firestore for easy access.
+
+## 🛠 Tech Stack
+
+### Languages and Frameworks
 - **Programming Language**: Kotlin
-- **Framework**: Android Studio
-- **Architecture**: MVVM
-- **APIs Used**:
-  - CoinGecko API for market data
-  - NewsAPI.org for crypto news
-- **Data Visualization**: MPAndroidChart library for trend analysis
-- **Authentication**: Firebase Authentication
-- **Database**: Firebase Firestore for wishlist management
-- **Version Control**: Git
+- **Framework**: Android Studio with Jetpack Compose
 
-## 📸 Screenshots
+### APIs Used
+- **CoinGecko API**: Real-time cryptocurrency market data
+- **NewsAPI.org**: Fetches the latest cryptocurrency news
 
-> *(Add screenshots here for Home, Wishlist, and News sections)*
+### Data Visualization
+- **MPAndroidChart**: For interactive charting of cryptocurrency trends
 
-## 📲 Getting Started
+### Architecture
+- **MVVM (Model-View-ViewModel)**: Ensures clean, maintainable code
 
-### Open in Android Studio:
-1. Import the project into Android Studio and sync Gradle files.
+### Storage
+- **Firebase Authentication**: For secure user login and management
+- **Firestore**: For storing and managing the user's wishlist of coins
+- **Local Database**: For caching data and improving performance
 
-### Add API Keys:
-1. Obtain your API keys from [CoinGecko](https://www.coingecko.com/en/api) and [NewsAPI](https://newsapi.org/).
-2. Add them to your project's `local.properties` file:
+### Version Control
+- **Git**: For version management and collaboration
 
-   ```properties
-   COINGECKO_API_KEY="your_coingecko_key"
-   NEWS_API_KEY="your_newsapi_key"
+## 🚀 Getting Started
+
+1. **Clone the Repository**:  
+   ```bash
+   git clone https://github.com/your-username/Crypzee.git
+## 🚀 Getting Started
+
+2. **Open in Android Studio**:
+   - Import the project into Android Studio and sync Gradle files.
+
+3. **Add API Keys**:
+   - Obtain your API keys from [CoinGecko](https://www.coingecko.com/en/api) and [NewsAPI](https://newsapi.org/).
+   - Add them to your project's `local.properties` file:
+
+     ```properties
+     COINGECKO_API_KEY="your_coingecko_key"
+     NEWS_API_KEY="your_newsapi_key"
+     ```
+
+4. **Firebase Setup**:
+   - Set up Firebase in your project by adding the `google-services.json` file in the `app/` directory.
+   - Enable Firebase Authentication and Firestore from the Firebase Console.
+
+5. **Run the App**:
+   - Build and run on an emulator or a physical device.
